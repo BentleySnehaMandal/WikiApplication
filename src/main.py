@@ -1,5 +1,9 @@
 from wiki_utils import get_wikipedia_summary, set_language
 from languages import SUPPORTED_LANGUAGES
+from save_utils import save_summary_to_file
+
+
+
 
 def choose_language():
     print("Select a language for Wikipedia search:")
@@ -38,6 +42,7 @@ def main():
                 continue
         print("\nSummary:\n")
         print(summary)
+        save_summary_to_file(topic, summary)
 
 if __name__ == "__main__":
     main()
